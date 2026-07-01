@@ -12,9 +12,9 @@ interface AuthContextProps {
 interface AuthProviderProps {
     children: ReactNode
 }
-
+//inicialização do context
 export const AuthContext = createContext({} as AuthContextProps)
-
+//permite armazenar dados e manipular 
 export function AuthProvider({children}: AuthProviderProps) {
 
     const [usuario, setUsuario] = useState<UsuarioLogin>({
@@ -23,7 +23,7 @@ export function AuthProvider({children}: AuthProviderProps) {
         usuario: "",
         senha: "",
         foto: "",
-        token: ""
+        token: "" 
     })
 
     const [isLoading, setIsLoading] = useState(false)

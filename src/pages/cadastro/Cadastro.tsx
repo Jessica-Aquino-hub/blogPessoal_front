@@ -31,7 +31,14 @@ function Cadastro() {
   function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
     setUsuario({
       ...usuario,
+      /*î - 
+        id: 0,
+        nome: '',
+        usuario: '',
+        senha: '',
+        foto: '' */
       [e.target.name]: e.target.value
+      // : -> = atribuição
     })
   }
   function handleConfirmarSenha(e: ChangeEvent<HTMLInputElement>) {
@@ -44,7 +51,7 @@ function Cadastro() {
     if (confirmarSenha === usuario.senha && usuario.senha.length >= 8) {
       setIsLoading(true)
       try {
-        await cadastrarUsuario('/usuarios/cadastrar', usuario, setUsuario)
+        await cadastrarUsuario('/usuarios/cadastrar', usuario, setUsuario) //`` | variavel + texto
         alert('Usuário cadastrado com sucesso!')
       } catch (error) {
         alert('Erro ao cadastrar o usuário! :(')
