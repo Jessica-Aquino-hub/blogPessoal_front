@@ -11,7 +11,7 @@ function FormTema() {
     const [tema, setTema] = useState<Tema>({} as Tema)
 
     const [isLoading, setIsLoading] = useState<boolean>(false)
-
+    //verifica se o token ainda vale, caso não desloga a aplicação
     const { usuario, handleLogout } = useContext(AuthContext)
     const token = usuario.token
 
