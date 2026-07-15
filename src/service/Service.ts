@@ -1,7 +1,7 @@
 import axios from "axios";
 //configuração do axios com o backend
 const api = axios.create({
-    baseURL: 'https://blogpessoal-80zj.onrender.com/'
+    baseURL: import.meta.env.VITE_API_URL
 })
 
 //Solicita uma requisição com o backend
